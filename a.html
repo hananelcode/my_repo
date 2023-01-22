@@ -1,24 +1,32 @@
 <html lang="en">
-<head>
+<head >
+    <script src="a.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>תחזית מזג אוויר</title>
 </head>
-<body>
-    <div style="display: flex; flex-direction: column; width: 100%; height: 100%;">
+<body onload="setInterval(q, 60000); q(); cookieColor()">
+    <!-- <div style="display: flex; flex-direction: column; width: 100%; height: 100%;"> -->
         <div style="height: 30%; border: green solid 1px; background-color: green; ">
             <p style="text-align: center; color: rgb(5, 197, 34); margin-top: 50px;">מזג אוויר בערים נבחרות</p>
         </div>
-        <div style="border: rgb(23, 203, 185) solid 1px; height: 70%; background-color: rgb(136, 190, 172); display: flex; flex-direction: row; padding-top: 5%;">
-            <button style="height: 35%; width: 30%; margin-left: 3%; background-color: aqua;">ירושלים</button>
-            <div style="display: flex; flex-direction: column;width: 30%; margin-left: 3%;">
-                <button style="height: 35%; background-color: aqua;">לונדון</button>
-                <button style="width: 55; margin-left: 20%;">refresh</button>
+        <div style="border: rgb(23, 203, 185) solid 1px; height: 70%; background-color: rgb(136, 190, 172); ">
+            <div style="display: flex; flex-direction: row;">
+                <label style="height: 35%; width: 30%; margin-left: 3%; margin-top: 16%; background-color: aqua; text-align: center; border: black solid;" id="jerusalemLabel">ירושלים</label>
+                <label style="height: 35%; width: 30%; margin-left: 3%; margin-top: 16%; background-color: aqua; text-align: center; border: black solid;" id="londonLabel">לונדון</label>
+                <label style="height: 35%; width: 30%; margin-left: 3%; margin-top: 16%; background-color: aqua; text-align: center; border: black solid;" id="new%20yorkLabel">ניו-יורק</label>
             </div>
-            <button style="height: 35%; width: 30%; margin-left: 3%;  background-color: aqua;">ניו-יורק</button>
-
+            <div style="display: flex; flex-direction: row;">
+                <img src="" style="margin-left: 15%; width: 20px;" id="jerusalemImg">
+                <img src="" style="margin-left: 30%; width: 20px;" id="londonImg">
+                <img src="" style="margin-left: 29%; width: 20px;" id="new%20yorkImg">
+            </div>
+            
+            <button onclick="q()" style="margin-top: 6%; margin-left: 45%;">refresh</button>
+            <br>
+        <button style="margin-top: 6%; margin-left: 41%;" onclick="changecolor()">change color</button>
         </div>
-    </div>
+        <!-- </div> -->
 </body>
 </html>
